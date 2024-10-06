@@ -1,0 +1,6 @@
+Think about your current knowledge and experience with databases and SQL.
+- Are you familiar with the duties and responsibilities of a database administrator (DBA)? What does a DBA do?
+- Do you know what tools are available to DBAs to ensure the integrity of the data in a database and the database itself?
+	- 
+- How would you rate your SQL skills on a scale form 1-10?
+	- 7
