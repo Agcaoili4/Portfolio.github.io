@@ -18,7 +18,7 @@ document.getElementById("name").addEventListener("click", function(event) {
 });
 
 // Image hover effect
-const images = ['img/Pic1.jpg', 'img/backgroundme.jpeg'];
+const images = ['img/backgroundme.jpeg'];
 let currentIndex = 0;
 let autoSlideInterval;
 
@@ -95,23 +95,23 @@ const experienceData = {
         ]
     },
     HMC: {
-        image: 'img/hmc_layout.png',
+        image: 'img/HMC.jpg',
         title: 'Hack Masters Club',
-        description: 'Description for Hack Masters Club...',
+        description: 'A School Club inside BVC Calgary campus. Dedicated to serve students by the use of technology and spread the knowledge about programming.',
         details: [
             'Role: President',
-            'Duration: 3 years',
-            'Major Events: Hack-cess Mania'
+            'Duration: Present',
+            'Projects/Events: HMC club Website'
         ]
     },
     AMF: {
         image: 'img/amf_layout.png',
         title: 'Affinity Membership Foundation',
-        description: 'Description for Affinity Membership Foundation...',
+        description: 'Affinity Mentorship Foundation (AMF) is an ongoing, dynamic mentoring program located in Calgary, AB, and a charitable society with a focus on empowering youth at-risk of or already involved with the justice system (VIA AMF website).',
         details: [
-            'Role: Public Relations Officer',
-            'Duration: 1 year',
-            'Events: 3 fundraising campaigns'
+            'Role: Web Developer Volunteer',
+            'Duration: Present',
+            'Events: Ongoing'
         ]
     }
 };
@@ -189,4 +189,13 @@ const observer = new IntersectionObserver((entries, observer) => {
 // Observe each section
 sections.forEach(section => {
   observer.observe(section);
+});
+
+document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
 });

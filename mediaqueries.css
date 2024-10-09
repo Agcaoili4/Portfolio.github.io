@@ -1,11 +1,46 @@
-/* Hamburger Menu */
-@media (max-width: 1200px) {
+/* Global Styles */
+* {
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
 
+body {
+    margin: 0; /* Reset default margin */
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Desktop Styles */
+@media (min-width: 601px) {
+    #hamburger-nav {
+        display: none;
+    }
+    
+}
+
+@media (min-width: 1025px) {
+    #hamburger-nav {
+        display: none;
+    }
+    .section__pic__container {
+        max-width: 400px; /* Adjust as needed */
+        height: 400px;    /* Maintain fixed height */
+    }
+
+    .about-pic {
+        width: 100%;
+        height: 100%; /* Make sure height fills the container */
+        object-fit: cover; /* Ensure it covers the container */
+    }
+}
+
+@media (max-width: 1024px) {
     #desktop-nav {
         display: none;
     }
-
-
+ 
     #hamburger-nav {
         display: flex;
         justify-content: space-between;
@@ -16,55 +51,37 @@
         width: 100%;
         z-index: 1000;
     }
-    
+
     nav {
         padding: 1rem 3%;
         position: relative;
+        width: 100%;
     }
-    
+
+    .name{
+        font-size: medium;
+    }
+
+    .logos{
+        padding: 0;
+        margin: 0;
+        left: 300px;
+    }
+
+    .logos img {
+        width: 40px;
+    }
+
     .link-nav {
         display: flex;
-        position: fixed;
         gap: 2rem;
         list-style: none;
         font-size: 1rem;
         margin: 0 auto; /* Centers the navigation links */
         padding: 0;
     }
-    .Hamburg-name span {
-        width: 100%;
-        height: 2px;
-        background-color: black;
-        transition: all 0.3s ease-in-out;
-    }
-
-    .menu-links {
-        position: relative;
-        text-align: right;
-        top: 100%;
-        right: 0;
-        width: fit-content;
-        max-height: 0;
-        overflow: hidden;
-        justify-content: center;
-        transition: all 0.3s ease-in-out;
-        margin-top: 1rem;
-        margin-left: 1rem;
-    }
-
-    .menu-links.open {
-        max-height: 300px;
-        margin-left: 1rem;
-    }
-
-    .menu-links.open a {
-        color: black;
-        text-decoration: none;
-        transition: color 0.3s ease;
-    }
-    
-    .menu-links.open a:hover {
-        color: white;
+    .header{
+        height: 500px;
     }
     .Hamburg-name {
         display: flex;
@@ -75,7 +92,49 @@
         cursor: pointer;
         position: relative;
         margin-left: auto;
-    }   
+    }
+    
+    .coder-text{
+        font-size:medium;
+        text-align: left;
+        width: 100%;
+        margin: -4rem;
+        padding-left: 10rem;
+    }
+
+    @keyframes moveLeft {
+        0% {
+            left: 0;
+            opacity: 0;
+        }
+        50% {
+            opacity: 1;
+        }
+        100% {
+            left: -70px;
+            opacity: 1;
+        }
+    }
+
+    @keyframes moveRight {
+        0% {
+            right: 0;
+            opacity: 0;
+        }
+        50% {
+            opacity: 1;
+        }
+        100% {
+            right: -70px;
+            opacity: 1;
+        }
+    }
+    .Hamburg-name span {
+        width: 100%;
+        height: 2px;
+        background-color: black;
+        transition: all 0.3s ease-in-out;
+    }
 
     /* Hamburger animation when open */
     .Hamburg-name.open span:first-child {
@@ -98,6 +157,11 @@
         width: 200px;
         max-height: 0;
         overflow: hidden;
+        justify-content: center;
+        transition: all 0.3s ease-in-out;
+        padding: 0;
+        margin-top: 1rem;
+        margin-left: 1rem;
     }
 
     .menu-links.open {
@@ -106,7 +170,103 @@
     }
 
     .menu-links a {
-        color: black; /* Ensure links are also black */
-        margin-left: 2rem; /* Space between links */
+        color: black;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        margin-left: 2rem;
+    }
+
+    .menu-links.open a:hover {
+        color: white;
+    }
+    #experience h2 {
+        font-size: 2rem; /* Smaller size for mobile */
+    }
+
+    /*About Part*/
+    .section__pic__container {
+        max-width: 350px;
+        height: 350px;
+        margin: 0;
+        margin-right: 0;
+        
+    }
+    .about-pic {
+        width: 100%; 
+        height: 100%; 
+      }
+
+      #about {
+        display: flex;
+        flex-direction: column;
+        text-align: center;     /* Center text */
+        padding: 1;         /* Add some padding for breathing room */
+        margin: auto;
+        margin-top: 5rem;
+        max-width: 800px;    /* Limit the width of the entire section */
+        margin-right: 1.5rem;
+    }
+    
+    #about h1 {
+        font-size: 1.5rem;     /* Increase the heading size */
+        margin: 0.5rem 0;    /* Add margin for breathing space */
+        padding: 0;
+    }
+    
+    h1 {
+        font-size: clamp(1.5rem, 5vw, 3rem); /* Minimum 1.5rem, Maximum 3rem */
+    }
+
+    #about p {
+        font-size: 14px;
+        margin:0;
+        max-width: 800px;  
+        line-height: 1.8;    
+        padding: 1 1rem;     
+    }
+    
+    .section__text__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;      /* Center the container */
+        padding: 2rem;       /* Add padding for spacing */
+        max-width: 800px;    /* Limit the width for better readability */
+    }
+    
+    .section__text__container h1 {
+        text-align: center;
+        margin: 1rem 0;      /* Add some margin to separate elements */
+        padding: 0;
+    }
+    
+    .section__text__container p:first-of-type {
+        margin: 1.5rem 0;    /* More margin for breathing space */
+        max-width: 700px;
+        line-height: 1.8;    /* Increase line height */
+        padding: 0 1rem;     /* Add some padding */
+    }
+}
+
+/* Additional Media Queries for Device Sizes */
+/* Small Phones - max-width: 600px */
+@media (max-width: 600px) {
+    .link-nav {
+        position: fixed;
+        font-size: 0.9rem;
+    }
+}
+
+/* Large Phones - max-width: 768px */
+@media (max-width: 768px) {
+    .menu-links a {
+        font-size: 1rem;
+    }
+}
+
+/* Tablets - max-width: 1024px */
+@media (max-width: 1024px) {
+    .menu-links a {
+        font-size: 1.2rem;
     }
 }
